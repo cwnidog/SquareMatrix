@@ -45,7 +45,7 @@
   [[self.rows objectAtIndex:row] replaceObjectAtIndex:col withObject:obj];
 } // setObject()
 
-// Funtion to ritate matrix 90°, i.e. swap rows and columns
+// Funtion to rotate matrix 90°, i.e. swap rows and columns
 - (SquareMatrix *)rotateSquareMatrix
 {
   // get a new SquareMatrix instance
@@ -56,8 +56,8 @@
   {
     for (int col = 0; col < self.dimension; col++)
     {
-      NSNumber *element = [self objectInRow:row column:col];
-      [turnedMatrix setObject:element inRow:col inColumn:row];
+      // copy the element at original matrix [row, col] to rotated matrix [col, row]
+      [turnedMatrix setObject:[self objectInRow:row column:col] inRow:col inColumn:row];
     } // for each column in the row
   } // for each row
   
