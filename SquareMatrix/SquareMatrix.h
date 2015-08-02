@@ -10,11 +10,12 @@
 
 @interface SquareMatrix : NSObject
 
-@property NSMutableArray *rows;
+@property (nonatomic) NSMutableArray *rows;
+@property (nonatomic) NSUInteger dimension;
 
 - initWithRows:(NSUInteger) dimension;
-+ squareArrayWithRows:(NSUInteger)dimension;
 - objectInRow:(NSUInteger)row column:(NSUInteger)col;
 - (void)setObject:(id)obj inRow:(NSUInteger)row inColumn:(NSUInteger)col;
+- (SquareMatrix *)rotateSquareMatrix;
 
 @end
